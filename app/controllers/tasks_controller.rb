@@ -46,7 +46,10 @@ class TasksController < ApplicationController
   private
   
   def set_task
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find_by(id: params[:id])
+    if @task == nil
+        redirect_to root_url
+    end
   end
 
   # Strong Parameter
