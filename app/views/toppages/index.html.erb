@@ -11,6 +11,9 @@
     </aside>
     <div class="col-xs-8">
       <%= render 'tasks/tasks', tasks: @tasks %>
+      <% @tasks.each do |task| %>
+      <li><%= task.content %></li>
+      <li><%= task.status %></li>
     </div>
   </div>
 <% else %>
@@ -18,10 +21,6 @@
     <div class="text-center">
       <h1>Welcome to the Tasklist</h1>
       <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-      <% @tasks.each do |task| %>
-     <li><%= task.content %></li>
-     <li><%= task.status %></li>
-  <% end %>
     </div>
   </div>
 <% end %>
