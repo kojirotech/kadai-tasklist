@@ -9,13 +9,12 @@
         <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
       <% end %>
     </aside>
-    <div class="col-xs-8">
-      <%= render 'tasks/tasks', tasks: @tasks %>
-      <% @tasks.each do |task| %>
-      <li><%= task.content %></li>
-      <li><%= task.status %></li>
+        <div class="col-xs-8">
+          <%= render 'tasks/tasks', tasks: @tasks %>
+          <% @tasks.each do |task| %>
+        </div>
+       <% end %> 
     </div>
-  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
